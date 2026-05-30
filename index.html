@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Ulang Tahun Ayang ❤️</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="heart-container" id="heartContainer"></div>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music/song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div id="welcomeScreen" class="welcome-screen">
+    <div class="welcome-card">
+      <h1>❤️ Hai Ayang ❤️</h1>
+
+      <p>
+        Sebelum masuk ke website ini,
+        aku mau tanya sesuatu dulu...
+      </p>
+
+      <h2>Ayang sayang sama aku nggak? 🥺</h2>
+
+      <div class="answer-box">
+        <button class="yes-btn" onclick="startWebsite()">Iya ❤️</button>
+        <button class="no-btn" id="noBtn">Tidak 😒</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="music-player">
+    <div class="music-left">
+      <div class="music-icon">🎵</div>
+      <div>
+        <h4>Can't Help Falling in Love</h4>
+        <p>Elvis Presley</p>
+      </div>
+    </div>
+
+    <button id="musicBtn" onclick="toggleMusic()">▶</button>
+  </div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge">✨ Website kecil untuk orang paling spesial ✨</span>
+
+      <h1>
+        Selamat Ulang Tahun,
+        <span>Ayangku ❤️</span>
+      </h1>
+
+      <p>
+        Hari ini bukan cuma tentang bertambahnya usia ayang,
+        tapi juga tentang betapa bersyukurnya aku karena ayang hadir di dunia ini.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#gallery" class="btn primary">Lihat Kenangan</a>
+        <a href="#letter" class="btn secondary">Baca Surat</a>
+        <button class="btn secondary" onclick="openSurprise()">Buka Kejutan</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section reveal">
+      <div class="section-heading">
+        <h2>Doaku Untuk Ayang</h2>
+        <p>
+          Semoga hari ulang tahun ini menjadi awal dari banyak hal indah
+          yang akan datang dalam hidup ayang.
+        </p>
+      </div>
+
+      <div class="wish-grid">
+        <article class="wish-card">
+          <div class="wish-icon">🎂</div>
+          <h3>Bahagia Selalu</h3>
+          <p>
+            Semoga senyum ayang selalu hadir di setiap hari,
+            dan hati ayang selalu dipenuhi rasa tenang.
+          </p>
+        </article>
+
+        <article class="wish-card">
+          <div class="wish-icon">🌷</div>
+          <h3>Dicintai Sepenuh Hati</h3>
+          <p>
+            Semoga ayang selalu merasa dicintai, dihargai,
+            dan dijaga oleh orang-orang yang menyayangi ayang.
+          </p>
+        </article>
+
+        <article class="wish-card">
+          <div class="wish-icon">✨</div>
+          <h3>Mimpi yang Indah</h3>
+          <p>
+            Semoga semua impian ayang perlahan menjadi nyata,
+            satu per satu, di waktu yang paling indah.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="gallery">
+      <div class="section-heading">
+        <h2>Kenangan Manis Ayang</h2>
+        <p>
+          Klik setiap foto untuk melihatnya lebih besar
+          bersama pesan kecil yang aku tulis khusus untuk ayang.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div
+          class="photo-card"
+          onclick="openPhoto('images/1.jpeg', 'Cantik di taman', 'Senyum ayang selalu jadi alasan aku ikut bahagia.')"
+        >
+          <img src="images/1.jpeg" alt="Foto ayang 1" />
+          <div class="photo-info">
+            <h3>Cantik di taman</h3>
+            <p>Klik untuk membuka ❤️</p>
+          </div>
+        </div>
+
+        <div
+          class="photo-card"
+          onclick="openPhoto('images/2.jpeg', 'Senyum manis', 'Tatapan ayang selalu punya cara untuk bikin aku rindu.')"
+        >
+          <img src="images/2.jpeg" alt="Foto ayang 2" />
+          <div class="photo-info">
+            <h3>Senyum manis</h3>
+            <p>Klik untuk membuka ❤️</p>
+          </div>
+        </div>
+
+        <div
+          class="photo-card"
+          onclick="openPhoto('images/3.jpeg', 'Momen anggun', 'Ayang selalu terlihat indah dengan cara ayang sendiri.')"
+        >
+          <img src="images/3.jpeg" alt="Foto ayang 3" />
+          <div class="photo-info">
+            <h3>Momen anggun</h3>
+            <p>Klik untuk membuka ❤️</p>
+          </div>
+        </div>
+
+        <div
+          class="photo-card"
+          onclick="openPhoto('images/4.jpeg', 'Foto kesukaan', 'Setiap momen tentang ayang selalu punya tempat spesial di hatiku.')"
+        >
+          <img src="images/4.jpeg" alt="Foto ayang 4" />
+          <div class="photo-info">
+            <h3>Foto kesukaan</h3>
+            <p>Klik untuk membuka ❤️</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="letter">
+      <div class="letter-box">
+        <div class="section-heading">
+          <h2>Surat Kecil Untuk Ayang</h2>
+          <p>
+            Ada pesan panjang yang aku simpan khusus
+            untuk hari ulang tahun ayang.
+          </p>
+        </div>
+
+        <button class="btn primary" onclick="toggleLetter()">
+          💌 Buka / Tutup Surat
+        </button>
+
+        <div class="letter-content" id="letterContent">
+          <p>Ayangku,</p>
+
+          <p>Selamat ulang tahun, cintaku. ❤️</p>
+
+          <p>
+            Hari ini adalah hari yang sangat spesial, karena hari ini adalah hari
+            ketika seseorang yang begitu berarti dalam hidupku dilahirkan ke dunia.
+            Aku tidak tahu bagaimana hidupku akan terlihat jika aku tidak pernah
+            mengenal ayang, tetapi yang aku tahu, sejak ayang hadir, banyak hal
+            terasa lebih indah dari sebelumnya.
+          </p>
+
+          <p>
+            Terima kasih karena sudah menjadi diri ayang yang luar biasa.
+            Terima kasih untuk semua perhatian kecil yang mungkin menurut ayang
+            sederhana, tetapi sangat berarti untukku. Terima kasih karena selalu
+            berusaha mengerti, selalu peduli, dan selalu ada, bahkan di saat aku
+            tidak menjadi versi terbaik dari diriku.
+          </p>
+
+          <p>
+            Aku suka caranya ayang tersenyum. Aku suka caranya ayang tertawa.
+            Aku suka caranya ayang bercerita tentang hal-hal kecil yang membuat
+            ayang bahagia. Bahkan aku suka caranya ayang mengeluh tentang hari
+            yang melelahkan, karena semua hal tentang ayang terasa begitu berharga
+            untukku.
+          </p>
+
+          <p>
+            Mungkin aku tidak selalu pandai mengungkapkan perasaan. Tetapi ada
+            satu hal yang selalu ingin aku pastikan ayang tahu:
+            <strong>aku mencintai ayang dengan sungguh-sungguh.</strong>
+          </p>
+
+          <p>
+            Aku bangga dengan semua perjuangan ayang. Aku bangga dengan setiap
+            langkah yang sudah ayang ambil sejauh ini. Ayang masih berdiri,
+            masih berjuang, dan masih menjadi pribadi yang luar biasa.
+          </p>
+
+          <p>
+            Semoga kesehatan selalu menyertai ayang. Semoga setiap impian yang
+            ayang simpan perlahan menemukan jalannya untuk menjadi kenyataan.
+            Semoga langkah ayang selalu dipenuhi keberanian, dan semoga hati
+            ayang selalu dipenuhi ketenangan.
+          </p>
+
+          <p>
+            Saat ayang lelah, aku ingin menjadi tempat ayang beristirahat.
+            Saat ayang sedih, aku ingin menjadi orang yang menghapus air mata
+            ayang. Saat ayang bahagia, aku ingin menjadi orang pertama yang ikut
+            merayakannya bersama ayang.
+          </p>
+
+          <p>
+            Terima kasih karena sudah menjadi bagian dari hidupku. Terima kasih
+            karena sudah memberikan begitu banyak kenangan indah yang akan selalu
+            aku simpan.
+          </p>
+
+          <p>
+            Jadi hari ini, di hari ulang tahun ayang, izinkan aku mengucapkan
+            satu hal yang paling penting:
+          </p>
+
+          <p><strong>Terima kasih karena sudah lahir.</strong></p>
+          <p><strong>Terima kasih karena sudah hadir di dunia ini.</strong></p>
+          <p><strong>Terima kasih karena sudah hadir dalam hidupku.</strong></p>
+          <p><strong>Selamat ulang tahun, ayangku.</strong></p>
+
+          <p>
+            Aku sayang ayang. Hari ini. Besok. Lusa.
+            Dan selama yang aku bisa. ❤️
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dibuat dengan sepenuh hati, hanya untuk ayang. ❤️</p>
+  </footer>
+
+  <div class="modal" id="photoModal" onclick="closePhoto()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-image">
+        <img id="modalImg" src="" alt="Foto ayang" />
+      </div>
+
+      <div class="modal-text">
+        <h3 id="modalTitle"></h3>
+        <p id="modalCaption"></p>
+        <button class="btn primary" onclick="closePhoto()">Tutup Foto</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="surpriseModal" onclick="closeSurprise()">
+    <div class="modal-box small" onclick="event.stopPropagation()">
+      <div class="modal-text">
+        <h3>Hadiah kecil dariku 🎁</h3>
+        <p>
+          Aku akan terus memilih ayang, di hari ulang tahun ayang,
+          di hari biasa, dan di setiap hari setelahnya.
+          Ayang adalah rumah paling hangat untuk hatiku.
+        </p>
+        <button class="btn primary" onclick="closeSurprise()">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+    const heartContainer = document.getElementById("heartContainer");
+    const reveals = document.querySelectorAll(".reveal");
+    const noBtn = document.getElementById("noBtn");
+
+    let isPlaying = false;
+
+    function startWebsite() {
+      document.getElementById("welcomeScreen").style.display = "none";
+
+      music.play()
+        .then(() => {
+          musicBtn.textContent = "❚❚";
+          isPlaying = true;
+        })
+        .catch(() => {
+          musicBtn.textContent = "▶";
+          isPlaying = false;
+        });
+    }
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+        musicBtn.textContent = "▶";
+        isPlaying = false;
+      } else {
+        music.play()
+          .then(() => {
+            musicBtn.textContent = "❚❚";
+            isPlaying = true;
+          })
+          .catch(() => {
+            alert("Musik belum bisa diputar. Pastikan file music/song.mp3 sudah benar.");
+          });
+      }
+    }
+
+    function moveNoButton() {
+      const box = document.querySelector(".answer-box");
+      const boxRect = box.getBoundingClientRect();
+      const btnRect = noBtn.getBoundingClientRect();
+
+      const maxX = boxRect.width - btnRect.width;
+      const maxY = boxRect.height - btnRect.height;
+
+      noBtn.style.left = Math.random() * maxX + "px";
+      noBtn.style.top = Math.random() * maxY + "px";
+    }
+
+    noBtn.addEventListener("mouseenter", moveNoButton);
+    noBtn.addEventListener("touchstart", moveNoButton);
+    noBtn.addEventListener("click", moveNoButton);
+
+    function openPhoto(src, title, caption) {
+      document.getElementById("modalImg").src = src;
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalCaption").textContent = caption;
+      document.getElementById("photoModal").classList.add("show");
+    }
+
+    function closePhoto() {
+      document.getElementById("photoModal").classList.remove("show");
+    }
+
+    function openSurprise() {
+      document.getElementById("surpriseModal").classList.add("show");
+    }
+
+    function closeSurprise() {
+      document.getElementById("surpriseModal").classList.remove("show");
+    }
+
+    function toggleLetter() {
+      document.getElementById("letterContent").classList.toggle("show");
+    }
+
+    function createHearts() {
+      for (let i = 0; i < 35; i++) {
+        const heart = document.createElement("span");
+        heart.className = "floating-heart";
+        heart.innerHTML = "♥";
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.fontSize = 14 + Math.random() * 24 + "px";
+        heart.style.animationDuration = 7 + Math.random() * 8 + "s";
+        heart.style.animationDelay = Math.random() * 6 + "s";
+        heartContainer.appendChild(heart);
+      }
+    }
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    reveals.forEach(item => observer.observe(item));
+    createHearts();
+  </script>
+</body>
+</html>
